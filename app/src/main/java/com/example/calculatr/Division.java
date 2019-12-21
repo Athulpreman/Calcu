@@ -24,23 +24,25 @@ public class Division extends AppCompatActivity {
         e2=(EditText)findViewById(R.id.second);
         b=(Button)findViewById(R.id.butto);
 
-        s1=Integer.parseInt(e1.getText().toString());
-        s2=Integer.parseInt(e2.getText().toString());
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        if(s2==0)
-        {
-            Toast.makeText(getApplicationContext(),"Division by zero is undefined",Toast.LENGTH_LONG).show();
-        }
-        else {
+                s1=Integer.parseInt(e1.getText().toString());
+                s2=Integer.parseInt(e2.getText().toString());
 
-            s3 = s1 / s2;
-
-            b.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Toast.makeText(getApplicationContext(), "Result = " + s3, Toast.LENGTH_LONG).show();
+                if(s2==0)
+                {
+                    Toast.makeText(getApplicationContext(),"Division by zero is undefined",Toast.LENGTH_LONG).show();
                 }
-            });
-        }
+                else {
+
+                    s3 = s1 / s2;
+
+
+                }
+            }
+        });
+
     }
 }

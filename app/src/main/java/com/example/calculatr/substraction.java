@@ -23,14 +23,17 @@ public class substraction extends AppCompatActivity {
         e2=(EditText)findViewById(R.id.second);
         b=(Button)findViewById(R.id.butto);
 
-        s1=Integer.parseInt(e1.getText().toString());
-        s2=Integer.parseInt(e2.getText().toString());
 
-        s3=s1-s2;
 
         b.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View v)
+            {
+
+                s1=Integer.parseInt(e1.getText().toString());
+                s2=Integer.parseInt(e2.getText().toString());
+
+                s3=s1-s2;
                 Toast.makeText(getApplicationContext(),"result = "+s3,Toast.LENGTH_LONG).show();
             }
         });
